@@ -1,3 +1,6 @@
+#This code implements a simple word-guessing game where a random word is selected from a predefined list. 
+#The player guesses letters, and correctly guessed letters are revealed in their corresponding positions in the word, while the rest remain hidden.
+
 word_list = ["test", "ganesh", "sushant"]
 
 import random
