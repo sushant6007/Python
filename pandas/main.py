@@ -1,7 +1,7 @@
-#1 pandas basics
-import pandas
+#1 pd basics
+import pandas as pd
 
-data = pandas.read_csv("2018_Central_Park_Squirrel_Census_Squirrel_Data.csv")
+data = pd.read_csv("2018_Central_Park_Squirrel_Census_Squirrel_Data.csv")
 gray_s_count = len(data[data["Primary Fur Color"] == "Gray"])
 black_s_count = len(data[data["Primary Fur Color"] == "Black"])
 red_s_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
@@ -12,7 +12,7 @@ print(red_s_count)
 
 data_dict = {"fur_colour":["Gray", "Black", "Cinnamon" ], "count":[gray_s_count, black_s_count, red_s_count]}
 
-df = pandas.DataFrame(data_dict)
+df = pd.DataFrame(data_dict)
 df.to_csv("squirrel_count.csv")
 
 #2 50 states game
@@ -26,7 +26,7 @@ screen.addshape(image)
 
 turtle.shape(image)
 
-state_data = pandas.read_csv("50_states.csv")
+state_data = pd.read_csv("50_states.csv")
 all_states = state_data.state.to_list()
 guessed_state = []
 
@@ -40,7 +40,7 @@ while len(guessed_state) < 50:
         for state in all_states:
             if state not in guessed_state:
                 missing_states.append(state)
-        new_data = pandas.DataFrame(missing_states)
+        new_data = pd.DataFrame(missing_states)
         new_data.to_csv("States_to_Learn.csv")
         print(missing_states)
         break
